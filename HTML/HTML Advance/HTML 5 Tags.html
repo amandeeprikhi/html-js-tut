@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!--<img src="pic_trulli.jpg" alt="Italian Trulli">
+    <picture>
+        <source media="(width: 150px)" srcset="img_food.jpg">
+        <source media="(width: 265px)" srcset="img_car.jpg">
+        <img src="img_girl.jpg">
+    </picture>-->
+    <div style="background-image: url('img_girl.jpg');">
+        You can specify background images<br>
+        for any visible HTML element.<br>
+        In this example, the background image<br>
+        is specified for a div element.<br>
+        By default, the background-image<br>
+        will repeat itself in the direction(s)<br>
+        where it is smaller than the element<br>
+        where it is specified. (Try resizing the<br>
+        browser window to see how the<br>
+        background image behaves.
+        <audio controls>
+            <source src="horse.ogg" type="audio/ogg">
+            <source src="horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <video width="400" controls>
+            <source src="mov_bbb.mp4" type="video/mp4">
+            <source src="mov_bbb.ogg" type="video/ogg">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+	<br><br>
+    <div id="result"></div>
+	<br><br>
+    <p>Count numbers: <output id="result"></output></p>
+    <button onclick="sayHI()">Say HI</button>
+    <button onclick="unknownCmd()">Send unknown command</button>
+    <button onclick="stop()">Stop worker</button>
+    <output id="result"></output>
+
+    <script>
+        // Check browser support
+        if (typeof (Storage) !== "undefined") {
+            // Store
+            localStorage.setItem("StorageSample", "Reading from local storage");
+            // Retrieve
+            document.getElementById("result").innerHTML = localStorage.getItem("StorageSample");
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+
+        function sayHI() {
+            worker.postMessage({ 'cmd': 'start', 'msg': 'Hi' });
+        }
+
+        function stop() {
+            // worker.terminate() from this script would also stop the worker.
+            worker.postMessage({ 'cmd': 'stop', 'msg': 'Bye' });
+        }
+
+        function unknownCmd() {
+            worker.postMessage({ 'cmd': 'foobard', 'msg': '???' });
+        }
+
+        var worker = new Worker('doWork2.js');
+
+        worker.addEventListener('message', function (e) {
+            document.getElementById('result').textContent = e.data;
+        }, false);
+		
+    </script>
+</body>
+
+</html>

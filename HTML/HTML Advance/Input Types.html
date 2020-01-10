@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Input Types</h1>
+    <form action="/action_page.php">
+        <h2>Text field</h2>
+        First name:<br>
+        <input type="text" name="firstname">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname">
+        <br><br>
+        <h2>Password field</h2>
+        User password:<br>
+        <input type="password" name="psw">
+        <br><br>
+        <h2>Radio Button</h2>
+        <input type="radio" name="gender" value="male" checked> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <br><br>
+        <h2>Checkboxes</h2>
+        <input type="checkbox" name="vehicle1" value="Bike">I have a bike
+        <br>
+        <input type="checkbox" name="vehicle2" value="Car">I have a car
+        <br><br>
+        <h2>Color Picker</h2>
+        Select your favorite color:
+        <input type="color" name="favcolor" value="#ff0000">
+        <br><br>
+        <h2>Date Field</h2>
+        <input type="date" name="bday" min="2000-01-02">
+        <br><br>
+        <h2>Local Date Field</h2>
+        <input type="datetime-local" name="bdaytime">
+        <p><strong>Note:</strong> type="datetime-local" is not supported in Firefox, Safari or Internet Explorer 12 and
+            earlier versions.</p>
+        <br><br>
+        <h2>Email Field</h2>
+        E-mail:
+        <input type="email" name="email">
+        <br><br>
+        <h2>File upload</h2>
+        Select a file: <input type="file" name="myFile"><br><br>
+        <h2>Month Field</h2>
+        Birthday (month and year):
+        <input type="month" name="bdaymonth">
+        <br><br>
+        <h2>Number Field</h2>
+        Quantity (between 1 and 5):
+        <input type="number" name="quantity" min="1" max="5">
+        <p><b>Note:</b> type="number" is not supported in IE9 and earlier.</p>
+        <br><br>
+        <h2>Input Restrictions</h2>
+        <p>Here is a list of some common input restrictions:</p>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Attribute</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>checked</td>
+                    <td>Specifies that an input field should be pre-selected when the page loads (for type="checkbox" or
+                        type="radio")</td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>Specifies that an input field should be disabled</td>
+                </tr>
+                <tr>
+                    <td>max</td>
+                    <td>Specifies the maximum value for an input field</td>
+                </tr>
+                <tr>
+                    <td>maxlength</td>
+                    <td>Specifies the maximum number of character for an input field</td>
+                </tr>
+                <tr>
+                    <td>min</td>
+                    <td>Specifies the minimum value for an input field</td>
+                </tr>
+                <tr>
+                    <td>pattern</td>
+                    <td>Specifies a regular expression to check the input value against</td>
+                </tr>
+                <tr>
+                    <td>readonly</td>
+                    <td>Specifies that an input field is read only (cannot be changed)</td>
+                </tr>
+                <tr>
+                    <td>required</td>
+                    <td>Specifies that an input field is required (must be filled out)</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>Specifies the width (in characters) of an input field</td>
+                </tr>
+                <tr>
+                    <td>step</td>
+                    <td>Specifies the legal number intervals for an input field</td>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>Specifies the default value for an input field</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <h2>Reset Button</h2>
+        <input type="reset">
+        <h2>Submit Button</h2>
+        <input type="submit">
+    </form>
+
+    <p>Note that the form itself is not visible.</p>
+</body>
+
+</html>
